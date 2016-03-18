@@ -89,7 +89,6 @@ public class Mahasiswa {
     public Kelas getPilihan(int i) {
         return pilihan[i];
     }
-    //APA//
     
     public void removePilihan (int idx){
         pilihan.remove(idx);
