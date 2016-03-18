@@ -13,12 +13,12 @@ public class Orang {
     private String nama;
     private String id;
 
-    public privat getString() {
-        return String;
+    public String getNama() {
+        return nama;
     }
 
-    public void setString(privat String) {
-        this.String = String;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getId() {
@@ -28,7 +28,5 @@ public class Orang {
     public void setId(String id) {
         this.id = id;
     }
-    
-    
-    
+   
 }
