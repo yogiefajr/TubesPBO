@@ -83,7 +83,7 @@ public class Mahasiswa {
         }
         else {
             pilihan[n] = pil;
-            n++;
+            n++ ;
         }
     }
     public Kelas getPilihan(int i) {
