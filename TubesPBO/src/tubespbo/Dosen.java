@@ -28,6 +28,5 @@ public class Dosen {
     public void setIdDosen(String idDosen) {
         this.idDosen = idDosen;
     }
-    
-    
+     
 }
