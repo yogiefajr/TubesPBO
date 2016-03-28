@@ -5,12 +5,16 @@
  */
 package tubespbo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author tinodau
  */
 public class Mahasiswa {
     private Kelas pilihan[];
+    private List<Kelas> coba = new ArrayList<>();
     private String username;
     private String password;
     private String id;
@@ -18,15 +22,6 @@ public class Mahasiswa {
     private int nMax;
     private int n = 0;
     
-    /*public Mahasiswa (String username, String password, int semester, int nMax, String id) {
-        this.username = username;
-        this.password = password;
-        this.semester = semester;
-        this.pilihan = new Kelas[nMax];
-        this.nMax = nMax;
-        this.id = id;
-    }*/
-
     public Mahasiswa(Kelas[] pilihan, String username, String password, String id, int semester, int nMax) {
         this.pilihan = pilihan;
         this.username = username;
@@ -91,6 +86,6 @@ public class Mahasiswa {
     }
     
     public void removePilihan (int idx){
-        pilihan.remove(idx);
+        coba.remove(idx);
     }    
 }
