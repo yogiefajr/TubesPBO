@@ -9,7 +9,7 @@ package tubespbo;
  *
  * @author Yogie fajar
  */
-public class Dosen {
+public class Dosen extends Orang {
     private String namaDosen;
     private String idDosen;
 
