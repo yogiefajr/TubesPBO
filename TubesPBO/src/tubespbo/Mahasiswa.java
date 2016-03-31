@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author tinodau
  */
-public class Mahasiswa {
+public class Mahasiswa extends Orang {
     private Kelas pilihan[];
     private List<Kelas> coba = new ArrayList<>();
     private String username;
