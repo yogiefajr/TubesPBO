@@ -5,6 +5,9 @@
  */
 package tubespbo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Yogie fajar
@@ -12,6 +15,7 @@ package tubespbo;
 public class Dosen extends Orang {
     private String namaDosen;
     private String idDosen;
+    private List<Kelas> daftarKelas = new ArrayList<>();
 
     public String getNamaDosen() {
         return namaDosen;

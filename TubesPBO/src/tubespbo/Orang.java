@@ -28,4 +28,9 @@ public class Orang {
     public void setId(String id) {
         this.id = id;
     }
+    
+    public void display () {
+        System.out.println("Nama : ");
+        System.out.println(getNama());
+    }
 }

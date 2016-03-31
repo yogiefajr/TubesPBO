@@ -13,8 +13,7 @@ import java.util.List;
  * @author tinodau
  */
 public class Mahasiswa extends Orang {
-    private Kelas pilihan[];
-    private List<Kelas> coba = new ArrayList<>();
+    private List<Kelas> daftarKelas = new ArrayList<>();
     private String username;
     private String password;
     private String id;
@@ -22,8 +21,7 @@ public class Mahasiswa extends Orang {
     private int nMax;
     private int n = 0;
     
-    public Mahasiswa(Kelas[] pilihan, String username, String password, String id, int semester, int nMax) {
-        this.pilihan = pilihan;
+    public Mahasiswa(String username, String password, String id, int semester, int nMax) {
         this.username = username;
         this.password = password;
         this.id = id;
@@ -72,20 +70,22 @@ public class Mahasiswa extends Orang {
         return id;
     }
         
-    public void setPilihan(Kelas pil) {
-        if (n == nMax) {
-            System.out.println("Penuh");
-        }
-        else {
-            pilihan[n] = pil;
-            n++ ;
-        }
+    public void setPilihan(Kelas pilihan) {
+        daftarKelas.add(pilihan);
     }
     public Kelas getPilihan(int i) {
-        return pilihan[i];
+        return daftarKelas.get(i);
     }
     
     public void removePilihan (int idx){
-        coba.remove(idx);
-    }    
+        daftarKelas.remove(idx);
+    }
+    
+    public void addKelas (Kelas k) {
+        daftarKelas.add(k);
+    }
+    
+    public void removeKelas (Kelas k) {
+        daftarKelas.remove(k);
+    }
 }

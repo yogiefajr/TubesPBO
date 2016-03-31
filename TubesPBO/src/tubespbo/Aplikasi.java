@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class Aplikasi {
     private List<Orang> daftarOrang = new ArrayList<>();
-    private Kelas[] daftarKelas;
-    private Matakuliah[] daftarMatakuliah;
+    private List<Kelas> daftarKelas = new ArrayList<>();
+    private List<Matakuliah> daftarMatakuliah = new ArrayList<>();
     
     public void addDosen (Dosen newDosen) {
         daftarOrang.add(newDosen);
