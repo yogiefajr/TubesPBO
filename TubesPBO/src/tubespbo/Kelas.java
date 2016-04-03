@@ -3,6 +3,7 @@ package tubespbo;
 public class Kelas {
     private Matakuliah matakuliah;
     private Dosen dosen;
+    private String kelasnya;
     
     public void setMatakuliah (Matakuliah m) {
         matakuliah = m;
@@ -18,6 +19,14 @@ public class Kelas {
     
     public Dosen getDosen () {
         return dosen;
+    }
+    
+    public String getKelasnya() {
+        return kelasnya;
+    }
+
+    public void setKelasnya(String kelasnya) {
+        this.kelasnya = kelasnya;
     }
     
     public void display () {

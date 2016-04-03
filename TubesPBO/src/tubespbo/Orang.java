@@ -5,14 +5,21 @@
  */
 package tubespbo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Yogie fajar
  */
-public class Orang {
+public abstract class Orang implements Serializable {
     private String nama;
     private String id;
 
+    public Orang(String nama, String id) {
+        this.nama = nama;
+        this.id = id;
+    }
+    
     public String getNama() {
         return nama;
     }

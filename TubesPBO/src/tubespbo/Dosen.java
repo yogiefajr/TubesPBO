@@ -5,6 +5,7 @@
  */
 package tubespbo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,11 +13,20 @@ import java.util.List;
  *
  * @author Yogie fajar
  */
-public class Dosen extends Orang {
-    private String namaDosen;
+public class Dosen extends Orang implements Serializable{
+    
+    public Dosen(String nama, String id) {
+        super(nama,id);
+    }
+    /*private String namaDosen;
     private String idDosen;
     private List<Kelas> daftarKelas = new ArrayList<>();
-
+    
+    public Dosen (String namaDosen, String idDosen){
+        this.namaDosen = namaDosen;
+        this.idDosen = idDosen;
+    }
+    
     public String getNamaDosen() {
         return namaDosen;
     }
@@ -31,6 +41,6 @@ public class Dosen extends Orang {
 
     public void setIdDosen(String idDosen) {
         this.idDosen = idDosen;
-    }
+    }*/
      
 }

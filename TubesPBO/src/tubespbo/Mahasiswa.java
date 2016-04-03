@@ -5,6 +5,7 @@
  */
 package tubespbo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,29 +13,21 @@ import java.util.List;
  *
  * @author tinodau
  */
-public class Mahasiswa extends Orang {
-    private List<Kelas> daftarKelas = new ArrayList<>();
+public class Mahasiswa extends Orang implements Serializable  {
+    private ArrayList<Kelas> daftarKelas = new ArrayList<Kelas>();
     private String username;
     private String password;
-    private String id;
     private int semester;
     private int nMax;
     private int n = 0;
     
-    public Mahasiswa(String username, String password, String id, int semester, int nMax) {
+    
+    public Mahasiswa(String username, String password,String namanya, String id, int semester, int nMax) {
+        super(namanya,id);
         this.username = username;
         this.password = password;
-        this.id = id;
         this.semester = semester;
         this.nMax = nMax;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -60,15 +53,6 @@ public class Mahasiswa extends Orang {
     public void setSemester(int semester) {
         this.semester = semester;
     }
-    
-
-    public void setIdMahasiswa (String id) {
-        this.id = id;
-    }
-    
-    public String getIdMahasiswa () {
-        return id;
-    }
         
     public void setPilihan(Kelas pilihan) {
         daftarKelas.add(pilihan);
@@ -87,5 +71,35 @@ public class Mahasiswa extends Orang {
     
     public void removeKelas (Kelas k) {
         daftarKelas.remove(k);
+    }
+    
+    public void removeKelas(String namaKelas) {
+        for (int i = 0; i < daftarKelas.size(); i++) {
+            if ( daftarKelas.get(i).getKelasnya().equals(namaKelas) ) {
+                daftarKelas.remove(i);
+            }
+        }
+    }
+    
+    public Kelas getKelas(String namaKelas) {
+        Kelas kelas = null;
+        for (int i = 0; i < daftarKelas.size(); i++) {
+            if ( daftarKelas.get(i).getKelasnya().equals(namaKelas) ) {
+                kelas = daftarKelas.get(i);
+            }
+        }
+        return kelas;
+    }
+    
+    public Kelas getKelas(int index) {
+        return daftarKelas.get(index);
+    }
+    
+    public ArrayList<Kelas> getKelasSemua() {
+        return daftarKelas;
+    }
+    
+    public int getTotalKelas() {
+        return daftarKelas.size();
     }
 }
