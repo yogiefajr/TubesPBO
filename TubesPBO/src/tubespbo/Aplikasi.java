@@ -4,12 +4,15 @@
  */
 package tubespbo;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -30,17 +33,17 @@ public class Aplikasi {
     /*************** MATAKULIAH *****************/
     
     
-    public Matakuliah getMatakuliah(int id) {
-        return getListMatkulFromFile().get(id);
+    public Matakuliah getMK(int id) {
+        return getFileMK().get(id);
     }
     
-    public ArrayList<Matakuliah> addMatakuliah(Matakuliah mk) {
-        ArrayList<Matakuliah> matakuliah = getListMatkulFromFile();
+    public ArrayList<Matakuliah> addMK(Matakuliah mk) {
+        ArrayList<Matakuliah> matakuliah = getFileMK();
         matakuliah.add(mk);
         return matakuliah;
     }
     
-    public ArrayList<Matakuliah> getListMatkulFromFile() {
+    public ArrayList<Matakuliah> getFileMK() {
         try {
             FileInputStream fis = new FileInputStream("matakuliah.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -53,7 +56,7 @@ public class Aplikasi {
         }
     }
     
-    public void deleteMatakuliah(int id) {
+    public void deleteMK(int id) {
         daftarMatakuliah.remove(id);
     }
     
@@ -61,16 +64,16 @@ public class Aplikasi {
     
     
     public Kelas getKelas(int id) {
-        return getListKelasFromFile().get(id);
+        return getFileKelas().get(id);
     }
     
     public ArrayList<Kelas> addKelas(Kelas k) {
-        ArrayList<Kelas> kelas = getListKelasFromFile();
+        ArrayList<Kelas> kelas = getFileKelas();
         kelas.add(k);
         return kelas;
     }
     
-     public ArrayList<Kelas> getListKelasFromFile() {
+     public ArrayList<Kelas> getFileKelas() {
         try {
             FileInputStream fis = new FileInputStream("kelas.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -124,19 +127,19 @@ public class Aplikasi {
     /****************** MAHASISWA *********************/
     
     
-    public void addMhasiswa (Mahasiswa newMhs) {
+    public void addMahasiswa (Mahasiswa newMhs) {
         daftarOrang.add(newMhs);
     }
     
     public Mahasiswa getMahasiswa(int id) {
-        return getListMahasiswaFromFile().get(id);
+        return getFileMahasiswa().get(id);
     }
     
     public void deleteMahasiswa(int id) {
         daftarMahasiswa.remove(id);
     }
     
-    public ArrayList<Mahasiswa> getListMahasiswaFromFile() {
+    public ArrayList<Mahasiswa> getFileMahasiswa() {
         try {
             FileInputStream fis = new FileInputStream("mahasiswa.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -149,7 +152,7 @@ public class Aplikasi {
         }
     }
     
-     public void saveListMahasiswaToFile(ArrayList<Mahasiswa> mahasiswa) {
+     public void saveFileMahasiswa(ArrayList<Mahasiswa> mahasiswa) {
         try {
             FileOutputStream fos = new FileOutputStream("mahasiswa.txt", false);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -164,36 +167,36 @@ public class Aplikasi {
     
     /******************** ADD ****************/
     
-    public void addMatkulToKelas(Kelas kls, Matakuliah matkul) {
-        kls.setMatakuliah(matkul);
+    public void addMKKelas(Kelas kls, Matakuliah matkul) {
+        kls.setMK(matkul);
     }
     
-    public void addKelasToMahasiswa(Mahasiswa mhs, Kelas kls) {
+    public void addKelasMahasiswa(Mahasiswa mhs, Kelas kls) {
         mhs.addKelas(kls);
     }
     
-    public void addDosenToKelas(Kelas kls, Dosen dsn) {
+    public void addDosenKelas(Kelas kls, Dosen dsn) {
         kls.setDosen(dsn);
     }
     
     
     /**************** REMOVE ***********/
     
-    public void removeKelasFromMahasiswa(Mahasiswa m, Kelas k) {
+    public void removeKelasMahasiswa(Mahasiswa m, Kelas k) {
         String namaKelas = k.getKelasnya();
         m.removeKelas(k);
     }
     
     /***************** VIEW *****************/
     
-    public ArrayList<Kelas> viewAllKelasByMahasiswa(Mahasiswa m) {
+    public ArrayList<Kelas> viewKelasMahasiswa(Mahasiswa m) {
         return m.getKelasSemua();
     }
     
     public void viewListNamaKelas() {
-        for (int i = 0; i < getListKelasFromFile().size(); i++) {
+        for (int i = 0; i < getFileKelas().size(); i++) {
             try {
-                System.out.println((i+1) + ". " + getListKelasFromFile().get(i).getKelasnya());
+                System.out.println((i+1) + ". " + getFileKelas().get(i).getKelasnya());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -202,30 +205,31 @@ public class Aplikasi {
     
     
     public void viewListKelas() {
-        for (int i = 0; i < getListKelasFromFile().size(); i++) {
-            System.out.println((i+1) + ". Nama Kelas : " + getListKelasFromFile().get(i).getKelasnya());
-            if ((getListKelasFromFile().get(i).getDosen()) != null) {
-                System.out.println("   Nama Dosen : " + getListKelasFromFile().get(i).getDosen().getNama());
+        for (int i = 0; i < getFileKelas().size(); i++) {
+            System.out.println((i+1) + ". Nama Kelas : " + getFileKelas().get(i).getKelasnya());
+            if ((getFileKelas().get(i).getDosen()) != null) {
+                System.out.println("   Nama Dosen : " + getFileKelas().get(i).getDosen().getNama());
             }
             else {
                 System.out.println("   Nama Dosen : ");
             }
-            if ((getListKelasFromFile().get(i).getMatakuliah()) != null) {
-                System.out.println("   Nama Matakuliah : " + getListKelasFromFile().get(i).getMatakuliah().getNamaMK());
+            if ((getFileKelas().get(i).getMK()) != null) {
+                System.out.println("   Nama Matakuliah : " + getFileKelas().get(i).getMK().getMKnya());
             }
             else {
                 System.out.println("   Nama Matakuliah : ");
             }
             System.out.println();
         }
-        if (getListKelasFromFile().size() == 0) {
+        if (getFileKelas().size() == 0) {
             System.out.println("Kelas Kosong");
         }
     }
     
-    public void viewListMatkul() {
-        for (int i = 0; i < getListMatkulFromFile().size(); i++) {
-            System.out.println((i+1) + ". " + getListMatkulFromFile().get(i).getNamaMK());
+    
+    public void viewListMK() {
+        for (int i = 0; i < getFileMK().size(); i++) {
+            System.out.println((i+1) + ". " + getFileMK().get(i).getMKnya());
         }
     }
     
@@ -237,7 +241,7 @@ public class Aplikasi {
     
     /************* DUMMY ***************/
     
-    public void createFile() {
+    public void toFile() {
         try {
             Mahasiswa mhs1 = new Mahasiswa("mhs1","abcde1","Mahasiswa 1","000001",4,1);
             Mahasiswa mhs2 = new Mahasiswa("mhs1","abcde2","Mahasiswa 1","000002",4,2);
@@ -331,35 +335,87 @@ public class Aplikasi {
         }
     }
     
-    /**public Mahasiswa getMahasiswa (String id) {
-        for ( int i = 1 ; i <= daftarOrang.size() ; i++ ) {
-            if ( daftarOrang.get(i).getId() == id ) {
-                return (Mahasiswa) daftarOrang.get(i);
+    public Mahasiswa getMahasiswa (String user, String pass) {
+        for (int i = 0; i < getFileMahasiswa().size(); i++) {
+            if ((getFileMahasiswa().get(i).getUsername().equals(user)) && 
+                    getFileMahasiswa().get(i).getPassword().equals(pass)) {
+                return getFileMahasiswa().get(i);
             }
         }
         return null;
     }
-     
-    public void deleteMahasiswa (String id) {
-        for ( int i = 1 ; i <= daftarOrang.size() ; i++ ) {
-            if ( daftarOrang.get(i).getId() == id ) {
-                daftarOrang.remove(i);
+    
+    public Admin getFileAdmin() {
+        try {
+            FileInputStream fis = new FileInputStream("admin.txt");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            Admin adm = (Admin)ois.readObject();
+            return adm;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
+    /************** CHECKING **************/
+    
+    public boolean isMahasiswa(String user, String pass) {
+        for (int i = 0; i < getFileMahasiswa().size(); i++) {
+            if ((getFileMahasiswa().get(i).getUsername().equals(user)) && 
+                    getFileMahasiswa().get(i).getPassword().equals(pass)) {
+                return true;
             }
         }
-    }**/
-     
-    /**
+        return false;
+    }
+    
+    public boolean isSameKelas(String namaKelas) {
+        int jumlah = 0;
+        for (int i = 0; i < getFileKelas().size(); i++) {
+            if (getFileKelas().get(i).getKelasnya().equals(namaKelas)) {
+                jumlah++;
+            }
+        }
+        if (jumlah == 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
+    public boolean isSameMK(String namaMK) {
+        int jumlah = 0;
+        for (int i = 0; i < getFileMK().size(); i++) {
+            if (getFileMK().get(i).getMKnya().equals(namaMK)) {
+                jumlah++;
+            }
+        }
+        if (jumlah == 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
+    
+    /****************** MENUNYA ****************/
+    
+    
+    
     public void mainMenu() {
-        File file1 = new File("mahasiswa.txt");
-        File file2 = new File("dosen.txt");
-        File file3 = new File("admin.txt");
-        File file4 = new File("kelas.txt");
-        File file5 = new File("matakuliah.txt");
-        if ((file1.exists()) && (file2.exists()) && (file3.exists()) && (file4.exists())  && (file5.exists())) {
+        File mhsnya = new File("mahasiswa.txt");
+        File dosennya = new File("dosen.txt");
+        File adminnya = new File("admin.txt");
+        File kelasnya = new File("kelas.txt");
+        File mknya = new File("matakuliah.txt");
+        if ((mhsnya.exists()) && (dosennya.exists()) && (adminnya.exists()) && (kelasnya.exists())  && (mknya.exists())) {
             
         }
         else {
-            createFile();
+            toFile();
         }
         
         int pilihan1 = 1;
@@ -385,19 +441,18 @@ public class Aplikasi {
                         System.out.print("Masukkan Password Admin : ");
                         password = huruf.nextLine();
                         
-                        if ((getAdminFromFile().getUsernameAdmin().equals(username)) &&
-                                (getAdminFromFile().getpasswordAdmin().equals(password))) {
+                        if ((getFileAdmin().getUserAdmin().equals(username)) &&
+                                (getFileAdmin().getUserAdmin().equals(password))) {
                             System.out.println("                    SELAMAT DATANG ADMIN");
                             int pilihan2 = 1;
                             
                             while (pilihan2 != 0) {
                                 System.out.println("MENU ADMIN : ");
                                 System.out.println("1. Tambah Kelas Baru");
-                                System.out.println("2. Hapus Kelas");
-                                System.out.println("3. Tambah Matakuliah");
-                                System.out.println("4. Tambah Matakuliah ke Kelas");
-                                System.out.println("5. Tambah Dosen Kelas");
-                                System.out.println("6. Hapus Dosen Kelas");
+                                System.out.println("2. Tambah Matakuliah Baru");
+                                System.out.println("3. Tambah Matakuliah ke Kelas");
+                                System.out.println("4. Tambah Dosen ke Kelas");
+                                System.out.println("5. View Kelas");
                                 System.out.println("0. Logout");
                                 System.out.print("Masukkan Menu : ");
                                 
@@ -405,61 +460,62 @@ public class Aplikasi {
                                     int menuAdmin = angka.nextInt();
                                     switch (menuAdmin) {
                                         case 1 :
-                                            System.out.print("Masukkan Nama Kelas : "); String namaKelas = huruf.nextline();
-                                            if ((isDuplikatKelas(namaKelas)) == false {
-                                                Kelas k = new Kelas (namakelas);
-                                                saveListKelasToFile(addKelas(k));
+                                            System.out.print("Masukkan Nama Kelas : ");String namaKelas = huruf.nextLine();
+                                            if ((isSameKelas(namaKelas)) == false) {
+                                                Kelas k = new Kelas(namaKelas);
+                                                simpanKelas(addKelas(k));
                                                 System.out.println("Kelas Berhasil Ditambahkan");
                                             }
                                             else {
-                                                System.out.println("Kelas Sudah Ada");
+                                                System.out.println("Kelas Sudah Tersedia");
                                             }
                                             break;
-                                        
-                                        Case 2: // GAGAL PAHAM //
-                                        
-                                        Case 3:
+
+                                        case 2 :
                                             System.out.print("Masukkan Nama Matakuliah : ");String namaMatkul = huruf.nextLine();
-                                            if ((isDuplikatMatkul(namaMatkul)) == false) {
-                                                 Matakuliah matkul = new Matakuliah();
-                                                 matkul.setnamaMK(namaMatkul);
-                                                 saveListMatkulToFile(addMatakuliah(matkul));
-                                                 System.out.printlnn("Matakuliah Berhasil Ditambahkan");
+                                            if ((isSameMK(namaMatkul)) == false) {
+                                                Matakuliah matkul = new Matakuliah();
+                                                matkul.setNamaMK(namaMatkul);
+                                                simpanMK(addMK(matkul));
+                                                System.out.println("Matakuliah Berhasil Ditambahkan");
                                             }
                                             else {
-                                                 System.out.println("Matakuliah Sudah Ada");
+                                                System.out.println("Matakuliah Sudah Tersedia");
                                             }
                                             break;
-                                            
-                                        Case 4 :
-                                            viewAllNamaKelas();
+
+                                        case 3 :
+                                            viewListNamaKelas();
                                             System.out.print("Pilih Kelas : "); int kelasPilih = angka.nextInt();
-                                            viewAllMatkul();
+                                            viewListMK();
                                             System.out.print("Pilih Matakuliah : "); int matkulPilih = angka.nextInt();
-                                            ArrayList<Kelas> kelas = getListKelasFromFile();
-                                            kelas.get(kelasPilih-1).setMatakuliah(getMatakuliah(matkulPilih-1));
-                                            saveListKelasToFile(kelas);
+                                            ArrayList<Kelas> kelas = getFileKelas();
+                                            kelas.get(kelasPilih-1).setMK(getMK(matkulPilih-1));
+                                            simpanKelas(kelas);
                                             System.out.println("Matakuliah Telah Berhasil Ditambahkan");
 
                                             break;
 
-                                        case 5 :
-                                            viewAllNamaKelas();
+                                        case 4 :
+                                            viewListNamaKelas();
                                             System.out.print("Pilih Kelas : "); kelasPilih = angka.nextInt();
-                                            viewAllDosen();
+                                            viewListDosen();
                                             System.out.print("Pilih Dosen : "); int dosenPilih = angka.nextInt();
-                                            kelas = getListKelasFromFile();
+                                            kelas = getFileKelas();
                                             kelas.get(kelasPilih-1).setDosen(getDosen(dosenPilih-1));
-                                            saveListKelasToFile(kelas);
+                                            simpanKelas(kelas);
                                             System.out.println("Dosen Telah Berhasil Ditambahkan");
                                             break;
-                                             
-                                        Cae 6 : //GAK PAHAM//
-                                        
+
+                                        case 5 :
+                                            viewListKelas();
+                                            System.out.println();
+                                            break;
+                                            
                                         case 0 :
                                             pilihan2 = 0;
                                             break;
-                                        
+                                            
                                         default :
                                             System.out.println("Menu tidak ada");
                                     }
@@ -479,8 +535,8 @@ public class Aplikasi {
                         System.out.print("Masukkan Password Mahasiswa : ");
                         password = huruf.nextLine();
                         
-                        if (isMahasiswaTrue(username, password) == true) {
-                            Mahasiswa mahasiswa = getTrueMahasiswa(username, password);
+                        if (isMahasiswa(username, password) == true) {
+                            Mahasiswa mahasiswa = getMahasiswa(username, password);
                             System.out.println("                    Selamat Datang " + mahasiswa.getNama());
                             
                             int pilihan3 = 1;
@@ -492,8 +548,156 @@ public class Aplikasi {
                                 System.out.println("3. View Kelas Yang Telah Diambil");
                                 System.out.println("0. Logout");
                                 System.out.print("Masukkan Pilihan : "); int menu = angka.nextInt();
-
-
-            **/
+                                
+                                switch (menu) {
+                                    case 1 : 
+                                        viewListKelas();
+                                        System.out.print("Pilih Kelas : "); int pilihKelas = angka.nextInt();
+                                        
+                                        int index = 0;
+                                        for (int i = 0; i < getFileMahasiswa().size(); i++) {
+                                            if ((getFileMahasiswa().get(i).getUsername().equals(username)) && 
+                                                    getFileMahasiswa().get(i).getPassword().equals(password)) {
+                                                index = i;
+                                            }
+                                        }
+                                        ArrayList<Mahasiswa> mhs = getFileMahasiswa();
+                                        
+                                        String namaKelas = getFileKelas().get(pilihKelas-1).getKelasnya();
+                                        boolean cek = true;
+                                        for (int i = 0; i < mhs.get(index).getKelasSemua().size(); i++) {
+                                            if (mhs.get(index).getKelasSemua().get(i).getKelasnya().equals(namaKelas)) {
+                                                cek = false;
+                                            }
+                                        }
+                                        
+                                        if (cek == true) {
+                                            mhs.get(index).addKelas(getKelas(pilihKelas-1));
+                                            saveFileMahasiswa(mhs);
+                                            System.out.println("Kelas Berhasil Ditambahkan");
+                                            break;
+                                        }
+                                        else {
+                                            System.out.println("Kelas Sudah Diambil");
+                                        }
+                                        break;
+                                        
+                                    case 2 :
+                                        ArrayList<Kelas> kelas = viewKelasMahasiswa(getMahasiswa(username, password));
+                                        for (int i = 0; i < kelas.size(); i++) {
+                                            System.out.println((i+1) + ". Nama Kelas : " + kelas.get(i).getKelasnya());
+                                            if (kelas.get(i).getDosen() != null) {
+                                                System.out.println("   Nama Dosen : " + kelas.get(i).getDosen().getNama());
+                                            }
+                                            else {
+                                                System.out.println("   Nama Dosen : ");
+                                            }
+                                            if (kelas.get(i).getMK() != null) {
+                                                System.out.println("   Nama Matakuliah : " + kelas.get(i).getMK().getMKnya());
+                                            }
+                                            else {
+                                                System.out.println("   Nama Matakuliah : ");
+                                            }
+                                            System.out.println();
+                                        }
+                                        
+                                        System.out.print("Pilih Kelas Yang Akan Dihapus : "); pilihKelas = angka.nextInt();
+                                        
+                                        index = 0;
+                                        for (int i = 0; i < getFileMahasiswa().size(); i++) {
+                                            if ((getFileMahasiswa().get(i).getUsername().equals(username)) && 
+                                                    getFileMahasiswa().get(i).getPassword().equals(password)) {
+                                                index = i;
+                                            }
+                                        }
+                                        mhs = getFileMahasiswa();
+                                        
+                                        namaKelas = getFileMahasiswa().get(pilihKelas-1).getKelasnya();
+                                        
+                                        cek = false;
+                                        for (int i = 0; i < mhs.get(index).getKelasSemua().size(); i++) {
+                                            if (mhs.get(index).getKelasSemua().get(i).getKelasnya().equals(namaKelas)) {
+                                                cek = true;
+                                            }
+                                        }
+                                        
+                                        if (cek == true) {
+                                            mhs.get(index).removeKelas(namaKelas);
+                                            saveFileMahasiswa(mhs);
+                                            System.out.println("Kelas Berhasil Dihapus");
+                                            break;
+                                        }
+                                        else {
+                                            System.out.println("Kelas Tidak Ada");
+                                        }
+                                        
+                                        break;
+                                        
+                                    case 3 : 
+                                        ArrayList<Kelas> k = viewKelasMahasiswa(getMahasiswa(username, password));
+                                        for (int i = 0; i < k.size(); i++) {
+                                            System.out.println((i+1) + ". Nama Kelas : " + k.get(i).getKelasnya());
+                                            if (k.get(i).getDosen() != null) {
+                                                System.out.println("   Nama Dosen : " + k.get(i).getDosen().getNama());
+                                            }
+                                            else {
+                                                System.out.println("   Nama Dosen : ");
+                                            }
+                                            if (k.get(i).getMK() != null) {
+                                                System.out.println("   Nama Matakuliah : " + k.get(i).getMK().getMKnya());
+                                            }
+                                            else {
+                                                System.out.println("   Nama Matakuliah : ");
+                                            }
+                                            System.out.println();
+                                        }
+                                        if (k.size() == 0) {
+                                            System.out.println("Kelas Kosong");
+                                        }
+                                        System.out.println();
+                                        break;
+                                        
+                                    case 0 :
+                                        pilihan3 = 0;
+                                        break;
+                                }
+                            }
+                        }
+                        else {
+                            System.out.println("USERNAME ATAU PASSWORD SALAH");
+                        }
+                        break;
+                        
+                    case 0 :
+                        System.out.println("TERIMA KASIH");
+                        pilihan1 = 0;
+                        break;
+                        
+                    default :
+                        System.out.println("Menu tidak ada");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Menu Salah");
+            }
+        }
+    }    
+    
+    /**public Mahasiswa getMahasiswa (String id) {
+        for ( int i = 1 ; i <= daftarOrang.size() ; i++ ) {
+            if ( daftarOrang.get(i).getId() == id ) {
+                return (Mahasiswa) daftarOrang.get(i);
+            }
+        }
+        return null;
+    }
+     
+    public void deleteMahasiswa (String id) {
+        for ( int i = 1 ; i <= daftarOrang.size() ; i++ ) {
+            if ( daftarOrang.get(i).getId() == id ) {
+                daftarOrang.remove(i);
+            }
+        }
+    }**/
+     
     
 }
