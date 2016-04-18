@@ -68,11 +68,11 @@ public class Mahasiswa extends Orang implements Serializable  {
     public void addKelas (Kelas k) {
         daftarKelas.add(k);
     }
-    
+    /**
     public void removeKelas (Kelas k) {
         daftarKelas.remove(k);
     }
-    
+    **/
     public void removeKelas(String namaKelas) {
         for (int i = 0; i < daftarKelas.size(); i++) {
             if ( daftarKelas.get(i).getKelasnya().equals(namaKelas) ) {
@@ -102,4 +102,13 @@ public class Mahasiswa extends Orang implements Serializable  {
     public int getTotalKelas() {
         return daftarKelas.size();
     }
+
+    String getKelasnya() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void removeKelas(Kelas k) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

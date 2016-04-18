@@ -7,12 +7,12 @@ public class Matakuliah {
         this.nama = nama;
     }
     
-    public String getNamaMK () {
+    public String getMKnya () {
         return nama;
     }
     
     public void display () {
         System.out.println("Nama Matakuliah");
-        System.out.println(getNamaMK());
+        System.out.println(getMKnya());
     }
 }

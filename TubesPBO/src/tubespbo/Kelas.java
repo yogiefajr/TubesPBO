@@ -5,11 +5,21 @@ public class Kelas {
     private Dosen dosen;
     private String kelasnya;
     
-    public void setMatakuliah (Matakuliah m) {
+    public Kelas(String kelasnya, Dosen dosen, Matakuliah matakuliah) {
+        this.kelasnya = kelasnya;
+        this.dosen = dosen;
+        this.matakuliah = matakuliah;
+    }
+
+    public Kelas(String kelasnya) {
+        this.kelasnya = kelasnya;
+    }
+    
+    public void setMK (Matakuliah m) {
         matakuliah = m;
     }
     
-    public Matakuliah getMatakuliah () {
+    public Matakuliah getMK  () {
         return matakuliah;
     }
     
@@ -31,7 +41,7 @@ public class Kelas {
     
     public void display () {
         System.out.println("Mata Kuliah");
-        System.out.println(getMatakuliah());
+        System.out.println(getMK());
         System.out.println("Dosen");
         System.out.println(getDosen());
     }
