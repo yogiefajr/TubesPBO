@@ -102,7 +102,7 @@ public class AdminHome extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("Nama");
+        jTextField1.setText("NIP");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
