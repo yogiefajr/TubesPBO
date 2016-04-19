@@ -5,11 +5,17 @@
  */
 package view;
 
+import tubespbo.Mahasiswa;
+
 /**
  *
  * @author tinodau
  */
 public class ViewMhsHome extends javax.swing.JFrame {
+
+    public static void addMahasiswa(Mahasiswa newMhs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      * Creates new form MahasiswaHome
