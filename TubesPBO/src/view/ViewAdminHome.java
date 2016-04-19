@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author tinodau
  */
-public class AdminHome extends javax.swing.JFrame {
+public class ViewAdminHome extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminHome
      */
-    public AdminHome() {
+    public ViewAdminHome() {
         initComponents();
     }
 
@@ -240,16 +240,10 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -258,9 +252,5 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTree jTree1;
-    private javax.swing.JTextField txFieldNama;
-    private javax.swing.JTextField txFieldNama1;
-    private javax.swing.JTextField txFieldNip;
-    private javax.swing.JTextField txFieldNip1;
     // End of variables declaration//GEN-END:variables
 }

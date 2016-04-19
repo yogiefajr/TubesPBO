@@ -9,12 +9,12 @@ package view;
  *
  * @author tinodau
  */
-public class AdminTambahKelas extends javax.swing.JFrame {
+public class ViewAdminTambahKelas extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminTambahKelas
      */
-    public AdminTambahKelas() {
+    public ViewAdminTambahKelas() {
         initComponents();
     }
 
