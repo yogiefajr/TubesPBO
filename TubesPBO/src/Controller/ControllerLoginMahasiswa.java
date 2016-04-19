@@ -49,5 +49,3 @@ public class ControllerLoginMahasiswa implements ActionListener {
         }
     }
 }
-
-
