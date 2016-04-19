@@ -27,10 +27,6 @@ public class Aplikasi {
     private List<Mahasiswa> daftarMahasiswa = new ArrayList<>();
     
     
-    
-
-    
-    
     /*************** MATAKULIAH *****************/
     
     
