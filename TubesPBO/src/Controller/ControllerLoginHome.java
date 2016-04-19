@@ -7,6 +7,7 @@ package Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import static jdk.nashorn.internal.objects.NativeRegExp.source;
 import view.ViewLoginHome;
 
@@ -26,7 +27,19 @@ public class ControllerLoginHome implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
+        
+        
+        if (source.equals(view.getBtnAdmin())) {
+            ControllerLoginAdmin loginADM = new ControllerLoginAdmin();
+            view.dispose();
+        }
+        else if (source.equals(view.getBtnMHS())) {
+            ControllerLoginMahasiswa loginMHS = new ControllerLoginMahasiswa();
+            view.dispose();
+        }
+        else if (source.equals(view.getBtnExit())) {
+            System.exit(0);
+        }
     }
-    
     
 }   

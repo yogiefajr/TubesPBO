@@ -19,6 +19,8 @@ public class ViewLoginHome extends javax.swing.JFrame {
      */
     public ViewLoginHome() {
         initComponents();
+        setTitle("Aplikasi Registrasi Mata Kuliah");
+        setLocationRelativeTo(null);
     }
 
     /**
