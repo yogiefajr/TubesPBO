@@ -47,7 +47,7 @@ public class ViewAdminTambahKelas extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Batal");
+        jButton2.setText("Kembali");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
