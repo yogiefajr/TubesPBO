@@ -38,11 +38,4 @@ public class Kelas {
     public void setKelasnya(String kelasnya) {
         this.kelasnya = kelasnya;
     }
-    
-    public void display () {
-        System.out.println("Mata Kuliah");
-        System.out.println(getMK());
-        System.out.println("Dosen");
-        System.out.println(getDosen());
-    }
 }

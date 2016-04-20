@@ -39,4 +39,9 @@ public class Admin extends Orang implements Serializable {
 		return passAdmin;
 	}
 
+    @Override
+    public String show() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

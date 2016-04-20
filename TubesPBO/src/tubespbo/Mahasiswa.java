@@ -8,6 +8,7 @@ package tubespbo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import static sun.rmi.registry.RegistryImpl.getID;
 
 /**
  *
@@ -18,8 +19,8 @@ public class Mahasiswa extends Orang implements Serializable  {
     private String username;
     private String password;
     private int semester;
-    private int nMax;
-    private int n = 0;
+    private static final long serialVersionUID = -70729030451812352L;
+
     
     
     public Mahasiswa(String username, String password,String namanya, String id, int semester, int nMax) {
@@ -27,7 +28,6 @@ public class Mahasiswa extends Orang implements Serializable  {
         this.username = username;
         this.password = password;
         this.semester = semester;
-        this.nMax = nMax;
     }
 
     public String getUsername() {
@@ -95,6 +95,8 @@ public class Mahasiswa extends Orang implements Serializable  {
         return daftarKelas.get(index);
     }
     
+    
+    
     public ArrayList<Kelas> getKelasSemua() {
         return daftarKelas;
     }
@@ -103,12 +105,13 @@ public class Mahasiswa extends Orang implements Serializable  {
         return daftarKelas.size();
     }
 
-    String getKelasnya() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    @Override
+    public String show() {
+        return ("Nama Mahasiswa : " + getNama() + "\n" + "ID Mahasiswa : " + getId());
     }
 
-    void removeKelas(Kelas k) {
+    String getKelas() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }

@@ -42,5 +42,10 @@ public class Dosen extends Orang implements Serializable{
     public void setIdDosen(String idDosen) {
         this.idDosen = idDosen;
     }*/
+
+    @Override
+    public String show() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
      
 }

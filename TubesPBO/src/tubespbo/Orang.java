@@ -19,25 +19,23 @@ public abstract class Orang implements Serializable {
         this.nama = nama;
         this.id = id;
     }
-    
-    public String getNama() {
-        return nama;
-    }
 
     public void setNama(String nama) {
         this.nama = nama;
     }
-
-    public String getId() {
-        return id;
+    
+    public String getNama() {
+        return nama;
     }
 
     public void setId(String id) {
         this.id = id;
     }
     
-    public void display () {
-        System.out.println("Nama : ");
-        System.out.println(getNama());
+    public String getId() {
+        return id;
     }
+
+    
+    public abstract String show();
 }

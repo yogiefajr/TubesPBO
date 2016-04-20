@@ -181,7 +181,7 @@ public class Aplikasi {
     
     public void removeKelasMahasiswa(Mahasiswa m, Kelas k) {
         String namaKelas = k.getKelasnya();
-        m.removeKelas(k);
+        m.removeKelas(namaKelas);
     }
     
     /***************** VIEW *****************/
@@ -609,7 +609,7 @@ public class Aplikasi {
                                         }
                                         mhs = getFileMahasiswa();
                                         
-                                        namaKelas = getFileMahasiswa().get(pilihKelas-1).getKelasnya();
+                                        namaKelas = getFileMahasiswa().get(pilihKelas-1).getKelas(); // masih salah
                                         
                                         cek = false;
                                         for (int i = 0; i < mhs.get(index).getKelasSemua().size(); i++) {
