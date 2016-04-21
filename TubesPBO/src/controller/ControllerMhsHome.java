@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package controller;
 
 /**
  *
@@ -19,28 +19,35 @@ import view.ViewMhsHome;
 
 
 public class ControllerMhsHome implements ActionListener{
-    private Aplikasi apli;
+    private Aplikasi aplikasi;
     private ViewMhsHome view;
     
     
     public ControllerMhsHome(){
-        apli = new Aplikasi();
+        aplikasi = new Aplikasi();
         view = new ViewMhsHome();
         view.setVisible(true);
+        view.addListener(this);
         
+        view.inputData(getNewMhs(ViewMhsHome.getMahasiswa()).getKelasSemua());
+        
+        String semester = Integer.toString(view.getMahasiswa().getSemester());
+        view.setTextNim(view.getMahasiswa().getId());
+        view.setTextNama(view.getMahasiswa().getNama());
+        view.setTextSemester(semester);
         
     }
     
     public Mahasiswa getNewMhs(Mahasiswa m) {
-        for (int i = 0; i < apli.getFileMahasiswa().size(); i++) {
-            if (apli.getFileMahasiswa().get(i).getUsername().equals(m.getUsername())) {
-                return apli.getFileMahasiswa().get(i);
+        for (int i = 0; i < aplikasi.getFileMahasiswa().size(); i++) {
+            if (aplikasi.getFileMahasiswa().get(i).getUsername().equals(m.getUsername())) {
+                return aplikasi.getFileMahasiswa().get(i);
             }
         }
         return null;
     }
     
-    /*@Override
+    @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
         
@@ -56,10 +63,6 @@ public class ControllerMhsHome implements ActionListener{
             ControllerLoginMahasiswa login = new ControllerLoginMahasiswa();
             view.dispose();
         }
-    }*/
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }

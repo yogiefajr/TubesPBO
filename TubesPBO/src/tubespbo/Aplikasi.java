@@ -20,11 +20,11 @@ import java.util.Scanner;
  * @author tinodau
  */
 public class Aplikasi {
-    private List<Orang> daftarOrang = new ArrayList<>();
-    private List<Kelas> daftarKelas = new ArrayList<>();
-    private List<Matakuliah> daftarMatakuliah = new ArrayList<>();
-    private List<Dosen> daftarDosen = new ArrayList<>();
-    private List<Mahasiswa> daftarMahasiswa = new ArrayList<>();
+    private ArrayList<Orang> daftarOrang = new ArrayList<Orang>();
+    private ArrayList<Kelas> daftarKelas = new ArrayList<Kelas>();
+    private ArrayList<Matakuliah> daftarMatakuliah = new ArrayList<Matakuliah>();
+    private ArrayList<Dosen> daftarDosen = new ArrayList<Dosen>();
+    private ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<Mahasiswa>();
     
     
     /*************** MATAKULIAH *****************/

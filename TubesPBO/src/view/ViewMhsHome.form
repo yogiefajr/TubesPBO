@@ -129,9 +129,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textNim">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textNimActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -163,9 +160,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textNama">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textNamaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnTambahKelas">
       <Properties>
@@ -176,9 +170,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Hapus Kelas"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusKelasActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnKeluar">
       <Properties>
@@ -191,9 +182,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textSemester">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textSemesterActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

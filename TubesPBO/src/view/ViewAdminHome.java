@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package view;
 
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
+import tubespbo.Kelas;
 /**
  *
  * @author tinodau
@@ -20,6 +22,9 @@ public class ViewAdminHome extends javax.swing.JFrame {
      */
     public ViewAdminHome() {
         initComponents();
+        setTitle("Panel Admin");
+        setLocationRelativeTo(null);
+        setHeader();
     }
 
     /**
@@ -35,21 +40,21 @@ public class ViewAdminHome extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
-        jButton2 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        btnKeluar = new javax.swing.JButton();
+        labelAdmin = new javax.swing.JLabel();
+        btnHapusKelas = new javax.swing.JButton();
+        btnTambahMK = new javax.swing.JButton();
+        btnTambahKelas = new javax.swing.JButton();
+        btnTambahMKKelas = new javax.swing.JButton();
+        btnTambahDosenKelas = new javax.swing.JButton();
+        btnHapusDosenKelas = new javax.swing.JButton();
+        textNip = new javax.swing.JTextField();
+        labelNip = new javax.swing.JLabel();
+        labelNama = new javax.swing.JLabel();
+        textNama = new javax.swing.JTextField();
+        labelDaftarKelas = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabelDaftarKelas = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,61 +74,59 @@ public class ViewAdminHome extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
 
-        jButton2.setText("Exit");
+        btnKeluar.setText("Exit");
 
-        jLabel5.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ADMIN");
+        labelAdmin.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
+        labelAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelAdmin.setText("ADMIN");
 
-        jButton1.setText("Hapus Kelas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnHapusKelas.setText("Hapus Kelas");
+        btnHapusKelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnHapusKelasActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Tambah Mata Kuliah");
+        btnTambahMK.setText("Tambah Mata Kuliah");
 
-        jButton4.setText("Tambah Kelas");
+        btnTambahKelas.setText("Tambah Kelas");
 
-        jButton5.setText("Tambah Mata Kuliah Kelas");
+        btnTambahMKKelas.setText("Tambah Mata Kuliah Kelas");
 
-        jButton6.setText("Tambah Dosen Kelas");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnTambahDosenKelas.setText("Tambah Dosen Kelas");
+        btnTambahDosenKelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnTambahDosenKelasActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Hapus  Dosen Kelas");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnHapusDosenKelas.setText("Hapus  Dosen Kelas");
+        btnHapusDosenKelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnHapusDosenKelasActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("NIP");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textNip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textNipActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("NIP");
+        labelNip.setText("NIP");
 
-        jLabel7.setText("Nama");
+        labelNama.setText("Nama");
 
-        jTextField2.setText("Nama");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textNamaActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
-        jLabel8.setText("Daftar Kelas");
+        labelDaftarKelas.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        labelDaftarKelas.setText("Daftar Kelas");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelDaftarKelas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -134,7 +137,7 @@ public class ViewAdminHome extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabelDaftarKelas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,27 +153,27 @@ public class ViewAdminHome extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnTambahMK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnTambahMKKelas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnHapusDosenKelas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnTambahDosenKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnHapusKelas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnKeluar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
+                                        .addComponent(labelNama)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textNama, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
+                                        .addComponent(labelNip)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(textNip, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnTambahKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelDaftarKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(63, 63, 63))))
         );
         layout.setVerticalGroup(
@@ -178,32 +181,32 @@ public class ViewAdminHome extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(labelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDaftarKelas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                            .addComponent(textNip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNip))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                            .addComponent(textNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNama))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(btnTambahKelas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addComponent(btnHapusKelas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(btnTambahMK)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
+                        .addComponent(btnTambahMKKelas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
+                        .addComponent(btnTambahDosenKelas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)
+                        .addComponent(btnHapusDosenKelas)
                         .addGap(40, 40, 40)
-                        .addComponent(jButton2))
+                        .addComponent(btnKeluar))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -211,46 +214,142 @@ public class ViewAdminHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnHapusKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusKelasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnHapusKelasActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnTambahDosenKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahDosenKelasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnTambahDosenKelasActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnHapusDosenKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusDosenKelasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnHapusDosenKelasActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNamaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textNamaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textNipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textNipActionPerformed
 
-
+    public JButton getBtnHapusDosenKelas() {
+        return btnHapusDosenKelas;
+    }
+    
+    public JButton getBtnHapusKelas() {
+        return btnHapusKelas;
+    }
+    
+    public JButton getBtnTambahMKKelas() {
+        return btnTambahMKKelas;
+    }
+    
+    public JButton getBtnTambahDosenKelas() {
+        return btnTambahDosenKelas;
+    }
+    
+    public JButton getBtnTambahKelas() {
+        return btnTambahKelas;
+    }
+    
+    public JButton getBtnTambahMK() {
+        return btnTambahMK;
+    }
+    
+    public Object getBtnKeluar(){
+        return btnKeluar;
+    }
+    
+    public void addListener(ActionListener a) {
+        btnHapusDosenKelas.addActionListener(a);
+        btnHapusKelas.addActionListener(a);
+        btnKeluar.addActionListener(a);
+        btnTambahDosenKelas.addActionListener(a);
+        btnTambahKelas.addActionListener(a);
+        btnTambahMK.addActionListener(a);
+        btnTambahMKKelas.addActionListener(a);
+    }
+    
+    public void setHeader() {
+        String[] header = {"No","Kelas","Matakuliah","Dosen"};
+        DefaultTableModel model = new DefaultTableModel(null, header);
+        tabelDaftarKelas.setModel(model);
+    }
+    
+    public void setTextNip(String Nip) {
+        textNip.setText(Nip);
+    }
+    
+    public void setTextNama(String Nama) {
+        textNama.setText(Nama);
+    }
+    
+    public void inputData(ArrayList<Kelas> daftarKelas) {
+        DefaultTableModel tabelModel = (DefaultTableModel) tabelDaftarKelas.getModel();
+        for (int i = 0; i < daftarKelas.size(); i++) {
+            if(daftarKelas.get(i).getMK()!=null) {
+                if(daftarKelas.get(i).getDosen()!=null) {
+                    tabelModel.addRow(
+                        new String[] {
+                            (i+1)+"",daftarKelas.get(i).getKelasnya(),    
+                            daftarKelas.get(i).getMK().getMKnya(),
+                            daftarKelas.get(i).getDosen().getNama()
+                        }
+                    );
+                } 
+                else {
+                    tabelModel.addRow(
+                        new String[] {
+                            (i+1)+"",daftarKelas.get(i).getKelasnya(),
+                            daftarKelas.get(i).getMK().getMKnya(),
+                            ""
+                        }
+                    );
+                }
+            } 
+            
+            else if(daftarKelas.get(i).getDosen()!=null) {
+                tabelModel.addRow(
+                    new String[] {
+                        (i+1)+"",daftarKelas.get(i).getKelasnya(),
+                        "",
+                        daftarKelas.get(i).getDosen().getNama()
+                    }
+                );
+            } 
+            
+            else {
+                tabelModel.addRow(
+                    new String[] {(i+1)+"",daftarKelas.get(i).getKelasnya(),
+                    "",
+                    ""
+                    }
+                );
+            }
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JButton btnHapusDosenKelas;
+    private javax.swing.JButton btnHapusKelas;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnTambahDosenKelas;
+    private javax.swing.JButton btnTambahKelas;
+    private javax.swing.JButton btnTambahMK;
+    private javax.swing.JButton btnTambahMKKelas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTree jTree1;
+    private javax.swing.JLabel labelAdmin;
+    private javax.swing.JLabel labelDaftarKelas;
+    private javax.swing.JLabel labelNama;
+    private javax.swing.JLabel labelNip;
+    private javax.swing.JTable tabelDaftarKelas;
+    private javax.swing.JTextField textNama;
+    private javax.swing.JTextField textNip;
     // End of variables declaration//GEN-END:variables
 }
