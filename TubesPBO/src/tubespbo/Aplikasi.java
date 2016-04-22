@@ -99,14 +99,14 @@ public class Aplikasi {
     
     
     public Dosen getDosen(int id) {
-        return getListDosenFromFile().get(id);
+        return getFileDosen().get(id);
     }
     
      public void deleteDosen(int id) {
         daftarDosen.remove(id);
     }
     
-    public ArrayList<Dosen> getListDosenFromFile() {
+    public ArrayList<Dosen> getFileDosen() {
         try {
             FileInputStream fis = new FileInputStream("dosen.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -231,8 +231,8 @@ public class Aplikasi {
     }
     
     public void viewListDosen() {
-        for (int i = 0; i < getListDosenFromFile().size(); i++) {
-            System.out.println((i+1) + ". " + getListDosenFromFile().get(i).getNama());
+        for (int i = 0; i < getFileDosen().size(); i++) {
+            System.out.println((i+1) + ". " + getFileDosen().get(i).getNama());
         }
     }
     
@@ -439,7 +439,7 @@ public class Aplikasi {
                         password = huruf.nextLine();
                         
                         if ((getFileAdmin().getUserAdmin().equals(username)) &&
-                                (getFileAdmin().getUserAdmin().equals(password))) {
+                                (getFileAdmin().getPassAdmin().equals(password))) {
                             System.out.println("                    SELAMAT DATANG ADMIN");
                             int pilihan2 = 1;
                             

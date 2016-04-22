@@ -17,22 +17,22 @@ import view.ViewLoginAdmin;
  */
 public class ControllerLoginAdmin implements ActionListener{
     private ViewLoginAdmin view;
-    private Aplikasi app;
+    private Aplikasi apps;
 
     public ControllerLoginAdmin() { 
         view = new ViewLoginAdmin();
-        app = new Aplikasi();
+        apps = new Aplikasi();
         view.setVisible(true);
         view.addListener(this);
     }
     
     @Override
-    public void actionPerformed(ActionEvent ae) {
-        Object source = ae.getSource();
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
         
         if (source.equals(view.getBtnLogin())) {
-            if ((app.getFileAdmin().getUserAdmin().equals(view.getUsername())) && 
-                    (app.getFileAdmin().getUserAdmin().equals(view.getPassword())) == true) {
+            if ((apps.getFileAdmin().getUserAdmin().equals(view.getUsername())) && 
+                    (apps.getFileAdmin().getPassAdmin().equals(view.getPassword())) == true) {
                 ControllerAdminHome home = new ControllerAdminHome();
                 view.dispose();
             }

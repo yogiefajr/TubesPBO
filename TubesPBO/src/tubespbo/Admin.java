@@ -19,29 +19,29 @@ public class Admin extends Orang implements Serializable {
 		super(nama,id);
 	}
 	
-        public String userNamaAdmin() {
+        /*public String userNamaAdmin() {
 		return userAdmin;
-	}
+	}*/
 	        
-	public void setUserAdmin (String usernameAdmin) {
-		this.userAdmin = usernameAdmin;
+	public void setUserAdmin (String userAdmin) {
+		this.userAdmin = userAdmin;
 	}
 	
         public String getUserAdmin() {
             return userAdmin;
         }
         
-	public void setPassAdmin (String passwordAdmin) {
-            this.passAdmin = passwordAdmin;
+	public void setPassAdmin (String passAdmin) {
+            this.passAdmin = passAdmin;
 	}
 	
-	public String setPassAdmin () {
+	public String getPassAdmin () {
 		return passAdmin;
 	}
 
     @Override
     public String show() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ("Selamat datang !");
     }
 
 }

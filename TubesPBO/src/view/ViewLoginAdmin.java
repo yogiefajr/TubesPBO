@@ -127,7 +127,7 @@ public class ViewLoginAdmin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-        public void setUsername(String username) {
+    public void setUsername(String username) {
         textUsername.setText(username);
     }
     

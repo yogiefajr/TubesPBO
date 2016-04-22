@@ -16,7 +16,7 @@ public class Kelas {
     }
     
     public void setMK (Matakuliah m) {
-        matakuliah = m;
+        this.matakuliah = m;
     }
     
     public Matakuliah getMK  () {
@@ -24,7 +24,7 @@ public class Kelas {
     }
     
     public void setDosen (Dosen d) {
-        dosen = d;
+        this.dosen = d;
     }
     
     public Dosen getDosen () {

@@ -62,7 +62,7 @@ public class ControllerMhsHome implements ActionListener{
         else if (source.equals(view.getBtnKeluar())) {
             ControllerLoginMahasiswa login = new ControllerLoginMahasiswa();
             view.dispose();
-        }
+        } 
     }
 
 }
