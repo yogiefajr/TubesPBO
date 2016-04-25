@@ -10,7 +10,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import tubespbo.Aplikasi;
 import view.ViewLoginAdmin;
-
+import view.ViewAdminHome;
+import view.ViewLoginHome;
 /**
  *
  * @author tinodau
@@ -38,6 +39,7 @@ public class ControllerLoginAdmin implements ActionListener{
             }
             else {
                 JOptionPane.showMessageDialog(null, "Username atau Password salah");
+                //  JOptionPane.showMessageDialog(view, "Username atau Password salah");
             }
         }
         

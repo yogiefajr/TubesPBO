@@ -7,8 +7,10 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.JOptionPane;
 import static jdk.nashorn.internal.objects.NativeRegExp.source;
+import tubespbo.Aplikasi;
 import view.ViewLoginHome;
 
 /**
@@ -17,11 +19,12 @@ import view.ViewLoginHome;
  */
 public class ControllerLoginHome implements ActionListener{
     private ViewLoginHome view;
-
+    
     public ControllerLoginHome() {
         view = new ViewLoginHome();
         view.setVisible(true);
         view.addListener(this);
+        
     }
 
     @Override

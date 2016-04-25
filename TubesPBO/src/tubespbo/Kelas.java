@@ -1,6 +1,8 @@
 package tubespbo;
 
-public class Kelas {
+import java.io.Serializable;
+
+public class Kelas implements Serializable {
     private Matakuliah matakuliah;
     private Dosen dosen;
     private String kelasnya;

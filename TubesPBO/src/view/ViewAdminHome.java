@@ -72,7 +72,6 @@ public class ViewAdminHome extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTree1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAutoRequestFocus(false);
 
         btnKeluar.setText("Exit");
 

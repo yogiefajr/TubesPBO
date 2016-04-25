@@ -36,7 +36,7 @@ public class Admin extends Orang implements Serializable {
 	}
 	
 	public String getPassAdmin () {
-		return passAdmin;
+            return passAdmin;
 	}
 
     @Override

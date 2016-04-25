@@ -1,6 +1,8 @@
 package tubespbo;
 
-public class Matakuliah {
+import java.io.Serializable;
+
+public class Matakuliah implements Serializable {
     private String nama;
     
     public void setNamaMK (String nama) {

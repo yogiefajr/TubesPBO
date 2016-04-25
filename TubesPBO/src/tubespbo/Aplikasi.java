@@ -42,7 +42,7 @@ public class Aplikasi {
     
     public ArrayList<Matakuliah> getFileMK() {
         try {
-            FileInputStream fis = new FileInputStream("matakuliah.txt");
+            FileInputStream fis = new FileInputStream("Matakuliah.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
             
             ArrayList<Matakuliah> matkul = (ArrayList<Matakuliah>)ois.readObject();
@@ -72,7 +72,7 @@ public class Aplikasi {
     
      public ArrayList<Kelas> getFileKelas() {
         try {
-            FileInputStream fis = new FileInputStream("kelas.txt");
+            FileInputStream fis = new FileInputStream("Kelas.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
             
             ArrayList<Kelas> kelas = (ArrayList<Kelas>)ois.readObject();
@@ -108,7 +108,7 @@ public class Aplikasi {
     
     public ArrayList<Dosen> getFileDosen() {
         try {
-            FileInputStream fis = new FileInputStream("dosen.txt");
+            FileInputStream fis = new FileInputStream("Dosen.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
             
             ArrayList<Dosen> dosen = (ArrayList<Dosen>)ois.readObject();
@@ -138,7 +138,7 @@ public class Aplikasi {
     
     public ArrayList<Mahasiswa> getFileMahasiswa() {
         try {
-            FileInputStream fis = new FileInputStream("mahasiswa.txt");
+            FileInputStream fis = new FileInputStream("Mahasiswa.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             ArrayList<Mahasiswa> m = (ArrayList<Mahasiswa>)ois.readObject();
@@ -151,7 +151,7 @@ public class Aplikasi {
     
      public void saveFileMahasiswa(ArrayList<Mahasiswa> mahasiswa) {
         try {
-            FileOutputStream fos = new FileOutputStream("mahasiswa.txt", false);
+            FileOutputStream fos = new FileOutputStream("Mahasiswa.txt", false);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(mahasiswa);
@@ -262,23 +262,23 @@ public class Aplikasi {
             daftarDosen.add(dsn4);
             daftarDosen.add(dsn5);
             
-            Admin admin = new Admin("Dani","ADM1");
+            Admin admin = new Admin("IF3808","Admin99");
             admin.setUserAdmin("adminadmin");
             admin.setPassAdmin("passwordadmin");
             
-            FileOutputStream fos1 = new FileOutputStream("mahasiswa.txt");
+            FileOutputStream fos1 = new FileOutputStream("Mahasiswa.txt");
             ObjectOutputStream obj1 = new ObjectOutputStream(fos1);
 
-            FileOutputStream fos2 = new FileOutputStream("dosen.txt");
+            FileOutputStream fos2 = new FileOutputStream("Dosen.txt");
             ObjectOutputStream obj2 = new ObjectOutputStream(fos2);
             
-            FileOutputStream fos3 = new FileOutputStream("admin.txt");
+            FileOutputStream fos3 = new FileOutputStream("Admin.txt");
             ObjectOutputStream obj3 = new ObjectOutputStream(fos3);
             
-            FileOutputStream fos4 = new FileOutputStream("kelas.txt");
+            FileOutputStream fos4 = new FileOutputStream("Kelas.txt");
             ObjectOutputStream obj4 = new ObjectOutputStream(fos4);
             
-            FileOutputStream fos5 = new FileOutputStream("matakuliah.txt");
+            FileOutputStream fos5 = new FileOutputStream("Matakuliah.txt");
             ObjectOutputStream obj5 = new ObjectOutputStream(fos5);
 
             obj1.writeObject(daftarMahasiswa);
@@ -322,7 +322,7 @@ public class Aplikasi {
     
     public void simpanMK(ArrayList<Matakuliah> matakuliah) {
         try {
-            FileOutputStream file = new FileOutputStream("Matkul.txt", false);
+            FileOutputStream file = new FileOutputStream("Matakuliah.txt", false);
             ObjectOutputStream objek = new ObjectOutputStream(file);
 
             objek.writeObject(matakuliah);
@@ -344,7 +344,7 @@ public class Aplikasi {
     
     public Admin getFileAdmin() {
         try {
-            FileInputStream fis = new FileInputStream("admin.txt");
+            FileInputStream fis = new FileInputStream("Admin.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             Admin adm = (Admin)ois.readObject();
@@ -403,11 +403,11 @@ public class Aplikasi {
     
     
     public void mainMenu() {
-        File mhsnya = new File("mahasiswa.txt");
-        File dosennya = new File("dosen.txt");
-        File adminnya = new File("admin.txt");
-        File kelasnya = new File("kelas.txt");
-        File mknya = new File("matakuliah.txt");
+        File mhsnya = new File("Mahasiswa.txt");
+        File dosennya = new File("Dosen.txt");
+        File adminnya = new File("Admin.txt");
+        File kelasnya = new File("Kelas.txt");
+        File mknya = new File("Matakuliah.txt");
         if ((mhsnya.exists()) && (dosennya.exists()) && (adminnya.exists()) && (kelasnya.exists())  && (mknya.exists())) {
             
         }
