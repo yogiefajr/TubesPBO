@@ -66,6 +66,8 @@ public class ControllerAdminTambahDosenKelas implements ActionListener{
                 }
                 
             }
+        view.dispose();
+        new ControllerAdminHome();
         }
     }
 }

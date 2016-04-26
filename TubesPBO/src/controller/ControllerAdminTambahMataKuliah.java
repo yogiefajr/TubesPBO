@@ -42,6 +42,9 @@ public class ControllerAdminTambahMataKuliah implements ActionListener{
             else {
                 JOptionPane.showMessageDialog(null, "Matakuliah sudah ada!");
             }
+            
+            view.dispose();
+            new ControllerAdminHome();
         }
         
         else if (source.equals(view.getBtnKembali())) {

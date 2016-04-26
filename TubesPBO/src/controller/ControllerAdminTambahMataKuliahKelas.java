@@ -82,6 +82,9 @@ public class ControllerAdminTambahMataKuliahKelas implements ActionListener{
                     }
                 
                 }
+                
+            view.dispose();
+            new ControllerAdminHome();
             } 
             else {
                 JOptionPane.showMessageDialog(null, "Mata Kuliah Telah Diambil di Kelas Lain");

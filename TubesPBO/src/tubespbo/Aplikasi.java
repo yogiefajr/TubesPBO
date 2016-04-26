@@ -6,7 +6,9 @@ package tubespbo;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -70,9 +72,15 @@ public class Aplikasi {
         return kelas;
     }
     
-    public ArrayList<Kelas> removeKelasAdmin(Kelas k) {
+    public ArrayList<Kelas> removeKelasAdmin(String k) throws FileNotFoundException, IOException {
         ArrayList<Kelas> kelas = getFileKelas();
-        kelas.remove(k);
+        for (int i = 0; i < kelas.size(); i++) {
+            if (kelas.get(i).getKelasnya().equals(k) ){
+                kelas.remove(i);
+            }
+        }
+//        kelas.remove(k);
+        simpanKelas(kelas);
         return kelas;
     }
     

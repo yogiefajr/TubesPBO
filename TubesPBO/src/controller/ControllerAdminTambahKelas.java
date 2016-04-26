@@ -35,12 +35,14 @@ public class ControllerAdminTambahKelas implements ActionListener{
             if (apps.isSameKelas(view.getNamaKelas()) == false) {
                 Kelas kls = new Kelas(view.getNamaKelas());
                 apps.simpanKelas(apps.addKelas(kls));
-                JOptionPane.showMessageDialog(null,apps.getFileKelas().get(0).getKelasnya());
+//                JOptionPane.showMessageDialog(null,apps.getFileKelas().get(0).getKelasnya());
                 JOptionPane.showMessageDialog(null, "Kelas berhasil ditambahkan");
             }
             else {
                 JOptionPane.showMessageDialog(null, "Kelas sudah ada");
             }
+            view.dispose();
+            new ControllerAdminHome();
         }
         
         else if (source.equals(view.getBtnKembali())) {

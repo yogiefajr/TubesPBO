@@ -7,7 +7,10 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import tubespbo.Aplikasi;
 import tubespbo.Kelas;
@@ -44,9 +47,15 @@ public class ControllerAdminHapusKelas implements ActionListener{
         
         if (source.equals(view.getBtnHapus())) {
             if (apps.isSameKelas(view.getComboKelas()) == true) {
-                Kelas kls = new Kelas(view.getComboKelas());
-                apps.simpanKelas(apps.removeKelasAdmin(kls));   
+                String kls =  view.getComboKelas();
+                try {   
+                    apps.simpanKelas(apps.removeKelasAdmin(kls));
+                } catch (IOException ex) {
+                    Logger.getLogger(ControllerAdminHapusKelas.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(null, "Kelas berhasil dihapus!");
+                view.dispose();
+                new ControllerAdminHapusKelas();
             }
             else {
                 JOptionPane.showMessageDialog(null, "Kelas Tidak Ada");
