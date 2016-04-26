@@ -181,11 +181,11 @@ public class ViewMhsHome extends javax.swing.JFrame {
     }
     
     public void setTextNim (String nim) {
-        textNama.setText(nim);
+        textNim.setText(nim);
     }
     
     public void setTextSemester (String semester) {
-        textNama.setText(semester);
+        textSemester.setText(semester);
     }
     
     public Object getBtnTambahKelas() {
@@ -200,7 +200,7 @@ public class ViewMhsHome extends javax.swing.JFrame {
         return btnKeluar;
     }
     
-    private static Mahasiswa mahasiswa = null;
+    private static Mahasiswa mahasiswa ;
 
     public static void addMahasiswa(Mahasiswa m) {
         mahasiswa = m;

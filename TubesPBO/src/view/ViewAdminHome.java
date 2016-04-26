@@ -236,7 +236,7 @@ public class ViewAdminHome extends javax.swing.JFrame {
     public JButton getBtnHapusDosenKelas() {
         return btnHapusDosenKelas;
     }
-    
+        
     public JButton getBtnHapusKelas() {
         return btnHapusKelas;
     }
@@ -260,6 +260,8 @@ public class ViewAdminHome extends javax.swing.JFrame {
     public Object getBtnKeluar(){
         return btnKeluar;
     }
+    
+    
     
     public void addListener(ActionListener a) {
         btnHapusDosenKelas.addActionListener(a);

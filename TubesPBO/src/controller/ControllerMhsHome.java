@@ -32,9 +32,10 @@ public class ControllerMhsHome implements ActionListener{
         view.inputData(getNewMhs(ViewMhsHome.getMahasiswa()).getKelasSemua());
         
         String semester = Integer.toString(view.getMahasiswa().getSemester());
+        
         view.setTextNim(view.getMahasiswa().getId());
-        view.setTextNama(view.getMahasiswa().getNama());
         view.setTextSemester(semester);
+        view.setTextNama(view.getMahasiswa().getNama());
         
     }
     

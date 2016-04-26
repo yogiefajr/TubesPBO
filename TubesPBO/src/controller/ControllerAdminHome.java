@@ -7,6 +7,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import tubespbo.Aplikasi;
 import view.ViewAdminHome;
 
@@ -34,18 +35,40 @@ public class ControllerAdminHome implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         
+        //tambah kelas
         if(source.equals(view.getBtnTambahKelas())) {
-            ControllerAdminTambahKelas tambahKelasAdm = new ControllerAdminTambahKelas();
+            ControllerAdminTambahKelas tka = new ControllerAdminTambahKelas();
             view.dispose();
+        
+        //tambah matakuliah
         } else if(source.equals(view.getBtnTambahMK())) {
-            ControllerAdminTambahMataKuliah tambahMKAdm = new ControllerAdminTambahMataKuliah();
+            ControllerAdminTambahMataKuliah tmka = new ControllerAdminTambahMataKuliah();
             view.dispose();
+            
+        //hapus kelas
+        } else if(source.equals(view.getBtnHapusKelas())) {
+            ControllerAdminHapusKelas hk = new ControllerAdminHapusKelas();
+            view.dispose();
+            
+            
+        //tambah dosen kelas
         } else if(source.equals(view.getBtnTambahDosenKelas())) {
-            ControllerAdminTambahDosenKelas tambahDosenKelas = new ControllerAdminTambahDosenKelas();
+            ControllerAdminTambahDosenKelas tdk = new ControllerAdminTambahDosenKelas();
             view.dispose();
+            
+            
+        //tambah matakuliah kelas
         } else if(source.equals(view.getBtnTambahMKKelas())) {
-            ControllerAdminTambahMataKuliahKelas tambahMKKelas = new ControllerAdminTambahMataKuliahKelas();
+            ControllerAdminTambahMataKuliahKelas tmkk = new ControllerAdminTambahMataKuliahKelas();
             view.dispose();
+            
+        
+        // Hapus dosen kelas
+        } else if(source.equals(view.getBtnHapusDosenKelas())) {
+            ControllerAdminHapusDosenKelas hdk = new ControllerAdminHapusDosenKelas();
+            view.dispose();
+            
+        // exit program
         } else if(source.equals(view.getBtnKeluar())) {
             ControllerLoginAdmin cla = new ControllerLoginAdmin();
             view.dispose();

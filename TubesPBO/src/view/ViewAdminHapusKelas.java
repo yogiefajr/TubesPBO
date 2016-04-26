@@ -143,8 +143,8 @@ public class ViewAdminHapusKelas extends javax.swing.JFrame {
     }
     
     
-    public void setComboKelas(String kelas) {
-        comboKelas.addItem(kelas);
+    public void setComboKelas(String Kelasnya) {
+        comboKelas.addItem(Kelasnya);
     }
     
     public String getComboKelas() {
@@ -158,50 +158,35 @@ public class ViewAdminHapusKelas extends javax.swing.JFrame {
     }
 
     
-    public void inputData(ArrayList<Kelas> daftarKelas) {
+    public void inputData(ArrayList<Kelas> listKelas) {
         DefaultTableModel tabelModel = (DefaultTableModel) tabelKelas.getModel();
-        for (int i = 0; i < daftarKelas.size(); i++) {
-            if(daftarKelas.get(i).getMK()!=null) {
-                if(daftarKelas.get(i).getDosen()!=null) {
-                    tabelModel.addRow(
-                        new String[] {
-                            (i+1)+"",daftarKelas.get(i).getKelasnya(),    
-                            daftarKelas.get(i).getMK().getMKnya(),
-                            daftarKelas.get(i).getDosen().getNama()
-                        }
-                    );
-                } 
-                else {
-                    tabelModel.addRow(
-                        new String[] {
-                            (i+1)+"",daftarKelas.get(i).getKelasnya(),
-                            daftarKelas.get(i).getMK().getMKnya(),
-                            ""
-                        }
-                    );
+        for (int i = 0; i < listKelas.size(); i++) {
+            if(listKelas.get(i).getMK()!=null) {
+                if(listKelas.get(i).getDosen()!=null) {
+                    tabelModel.addRow(new String[] {(i+1)+"",listKelas.get(i).getKelasnya(),
+                        listKelas.get(i).getMK().getMKnya(),
+                        listKelas.get(i).getDosen().getNama()
+                    });
+                } else {
+                    tabelModel.addRow(new String[] {(i+1)+"",listKelas.get(i).getKelasnya(),
+                        listKelas.get(i).getMK().getMKnya(),
+                        ""
+                    });
                 }
-            } 
-            
-            else if(daftarKelas.get(i).getDosen()!=null) {
-                tabelModel.addRow(
-                    new String[] {
-                        (i+1)+"",daftarKelas.get(i).getKelasnya(),
+            } else if(listKelas.get(i).getDosen()!=null) {
+                tabelModel.addRow(new String[] {(i+1)+"",listKelas.get(i).getKelasnya(),
                         "",
-                        daftarKelas.get(i).getDosen().getNama()
-                    }
-                );
-            } 
-            
-            else {
-                tabelModel.addRow(
-                    new String[] {(i+1)+"",daftarKelas.get(i).getKelasnya(),
-                    "",
-                    ""
-                    }
-                );
+                        listKelas.get(i).getDosen().getNama()
+                    });
+            } else {
+                tabelModel.addRow(new String[] {(i+1)+"",listKelas.get(i).getKelasnya(),
+                        "",
+                        ""
+                    });
             }
         }
     }
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;

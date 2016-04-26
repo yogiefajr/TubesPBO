@@ -73,7 +73,11 @@ public class ViewMhsTambahKelas extends javax.swing.JFrame {
         labelKelas.setFont(new java.awt.Font("Droid Sans", 0, 14)); // NOI18N
         labelKelas.setText("Kelas");
 
-        comboKelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboKelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboKelasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,6 +130,10 @@ public class ViewMhsTambahKelas extends javax.swing.JFrame {
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTambahActionPerformed
+
+    private void comboKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboKelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboKelasActionPerformed
 
     /**
      * @param args the command line arguments

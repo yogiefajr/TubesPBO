@@ -70,6 +70,12 @@ public class Aplikasi {
         return kelas;
     }
     
+    public ArrayList<Kelas> removeKelasAdmin(Kelas k) {
+        ArrayList<Kelas> kelas = getFileKelas();
+        kelas.remove(k);
+        return kelas;
+    }
+    
      public ArrayList<Kelas> getFileKelas() {
         try {
             FileInputStream fis = new FileInputStream("Kelas.txt");
@@ -240,11 +246,11 @@ public class Aplikasi {
     
     public void toFile() {
         try {
-            Mahasiswa mhs1 = new Mahasiswa("mhs1","abcde1","Mahasiswa 1","000001",4,1);
+            Mahasiswa mhs1 = new Mahasiswa("mhs1","abcde1","Mahasiswa 1","000001",3,1);
             Mahasiswa mhs2 = new Mahasiswa("mhs1","abcde2","Mahasiswa 1","000002",4,2);
-            Mahasiswa mhs3 = new Mahasiswa("mhs1","abcde3","Mahasiswa 1","000003",4,3);
-            Mahasiswa mhs4 = new Mahasiswa("mhs1","abcde4","Mahasiswa 1","000004",4,4);
-            Mahasiswa mhs5 = new Mahasiswa("mhs1","abcde5","Mahasiswa 1","000005",4,5);
+            Mahasiswa mhs3 = new Mahasiswa("mhs1","abcde3","Mahasiswa 1","000003",5,3);
+            Mahasiswa mhs4 = new Mahasiswa("mhs1","abcde4","Mahasiswa 1","000004",6,4);
+            Mahasiswa mhs5 = new Mahasiswa("mhs1","abcde5","Mahasiswa 1","000005",7,5);
             daftarMahasiswa.add(mhs1);
             daftarMahasiswa.add(mhs2);
             daftarMahasiswa.add(mhs3);
