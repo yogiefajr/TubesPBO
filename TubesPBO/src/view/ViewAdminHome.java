@@ -233,7 +233,7 @@ public class ViewAdminHome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textNipActionPerformed
 
-    public JButton getBtnHapusDosenKelas() {
+        public JButton getBtnHapusDosenKelas() {
         return btnHapusDosenKelas;
     }
         
@@ -294,7 +294,8 @@ public class ViewAdminHome extends javax.swing.JFrame {
                 if(daftarKelas.get(i).getDosen()!=null) {
                     tabelModel.addRow(
                         new String[] {
-                            (i+1)+"",daftarKelas.get(i).getKelasnya(),    
+                            (i+1)+"",
+                            daftarKelas.get(i).getKelasnya(),    
                             daftarKelas.get(i).getMK().getMKnya(),
                             daftarKelas.get(i).getDosen().getNama()
                         }
@@ -303,7 +304,8 @@ public class ViewAdminHome extends javax.swing.JFrame {
                 else {
                     tabelModel.addRow(
                         new String[] {
-                            (i+1)+"",daftarKelas.get(i).getKelasnya(),
+                            (i+1)+"",
+                            daftarKelas.get(i).getKelasnya(),
                             daftarKelas.get(i).getMK().getMKnya(),
                             ""
                         }
@@ -314,7 +316,8 @@ public class ViewAdminHome extends javax.swing.JFrame {
             else if(daftarKelas.get(i).getDosen()!=null) {
                 tabelModel.addRow(
                     new String[] {
-                        (i+1)+"",daftarKelas.get(i).getKelasnya(),
+                        (i+1)+"",
+                        daftarKelas.get(i).getKelasnya(),
                         "",
                         daftarKelas.get(i).getDosen().getNama()
                     }
@@ -323,7 +326,8 @@ public class ViewAdminHome extends javax.swing.JFrame {
             
             else {
                 tabelModel.addRow(
-                    new String[] {(i+1)+"",daftarKelas.get(i).getKelasnya(),
+                    new String[] {(i+1)+"",
+                        daftarKelas.get(i).getKelasnya(),
                     "",
                     ""
                     }
@@ -331,6 +335,7 @@ public class ViewAdminHome extends javax.swing.JFrame {
             }
         }
     }
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapusDosenKelas;

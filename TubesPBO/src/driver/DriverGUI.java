@@ -17,6 +17,6 @@ public class DriverGUI {
     public static void main(String[] args) throws IOException {
         Aplikasi app = new Aplikasi();
         ControllerLoginHome home = new ControllerLoginHome();
-        app.mainMenu();
+        
     }
 }

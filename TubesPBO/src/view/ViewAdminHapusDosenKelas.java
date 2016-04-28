@@ -8,6 +8,7 @@ package view;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 import tubespbo.Kelas;
 
@@ -16,15 +17,15 @@ import tubespbo.Kelas;
  * @author tinodau
  */
 public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form HapusDosenKelas
      */
     public ViewAdminHapusDosenKelas() {
         initComponents();
         setTitle("Hapus Dosen Kelas | Admin");
-        setLocationRelativeTo(null);
         setHeader();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -39,11 +40,9 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnKembali = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
-        comboDosen = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelKelas = new javax.swing.JTable();
-        comboKelas = new javax.swing.JComboBox<>();
-        labelDosen = new javax.swing.JLabel();
+        comboKelas = new javax.swing.JComboBox<String>();
         labelKelas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,8 +73,6 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelKelas);
 
-        labelDosen.setText("Dosen");
-
         labelKelas.setText("Kelas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -90,13 +87,9 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelDosen)
-                            .addComponent(labelKelas))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comboDosen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboKelas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(labelKelas)
+                        .addGap(23, 23, 23)
+                        .addComponent(comboKelas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(50, 50, 50))
             .addGroup(layout.createSequentialGroup()
                 .addGap(151, 151, 151)
@@ -112,13 +105,9 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelDosen))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelKelas))
@@ -139,7 +128,6 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
     public JButton getBtnHapus() {
         return btnHapus;
     }
@@ -148,23 +136,18 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
         return btnKembali;
     }
     
+    public JComboBox getComboKelasBox() {
+        return comboKelas;
+    }
+    
     public void addListener(ActionListener a){
         btnHapus.addActionListener(a);
         btnKembali.addActionListener(a);
-        comboDosen.addActionListener(a);
         comboKelas.addActionListener(a);
     }
-    
-    public void setComboDosen(String dosen){
-        comboDosen.addItem(dosen);
-    }
-    
+        
     public void setComboKelas(String kelas) {
         comboKelas.addItem(kelas);
-    }
-    
-    public String getComboDosen(){
-        return comboDosen.getSelectedItem().toString();
     }
     
     public String getComboKelas() {
@@ -222,16 +205,15 @@ public class ViewAdminHapusDosenKelas extends javax.swing.JFrame {
             }
         }
     }
-    
-    
+
+       
+            
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKembali;
-    private javax.swing.JComboBox<String> comboDosen;
     private javax.swing.JComboBox<String> comboKelas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelDosen;
     private javax.swing.JLabel labelKelas;
     private javax.swing.JTable tabelKelas;
     // End of variables declaration//GEN-END:variables

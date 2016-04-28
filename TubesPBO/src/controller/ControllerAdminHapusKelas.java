@@ -39,8 +39,7 @@ public class ControllerAdminHapusKelas implements ActionListener{
             view.setComboKelas(apps.getFileKelas().get(i).getKelasnya());
         }
     }
-    
-
+   
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
@@ -66,7 +65,5 @@ public class ControllerAdminHapusKelas implements ActionListener{
             ControllerAdminHome home = new ControllerAdminHome();
             view.dispose();
         }
-    }
-    
-    
+    }   
 }
