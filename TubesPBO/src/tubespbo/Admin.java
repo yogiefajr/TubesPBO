@@ -6,7 +6,6 @@
 package tubespbo;
 import java.io.Serializable;
 
-
 /**
  *
  * @author tinodau
