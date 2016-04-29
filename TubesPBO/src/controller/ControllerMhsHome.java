@@ -29,7 +29,7 @@ public class ControllerMhsHome implements ActionListener{
         view.setVisible(true);
         view.addListener(this);
         
-        view.inputData(getNewMhs(ViewMhsHome.getMahasiswa()).getKelasSemua());
+        view.inputData(getNewMhs(ViewMhsHome.getMahasiswa()).getKelasSemua()); //menampilin tabel yang dari admin
         
         String semester = Integer.toString(view.getMahasiswa().getSemester());
         
@@ -39,7 +39,7 @@ public class ControllerMhsHome implements ActionListener{
         
     }
     
-    public Mahasiswa getNewMhs(Mahasiswa m) {
+    public Mahasiswa getNewMhs(Mahasiswa m) { // retun file mahasiswa indeks ke -i
         for (int i = 0; i < aplikasi.getFileMahasiswa().size(); i++) {
             if (aplikasi.getFileMahasiswa().get(i).getUsername().equals(m.getUsername())) {
                 return aplikasi.getFileMahasiswa().get(i);
@@ -57,7 +57,7 @@ public class ControllerMhsHome implements ActionListener{
             view.dispose();
         }
         else if (source.equals(view.getBtnHapusKelas())) {
-            ControllerMhsTambahKelas hapus = new ControllerMhsTambahKelas();
+            ControllerMhsHapusKelas hapus = new ControllerMhsHapusKelas();
             view.dispose();
         }
         else if (source.equals(view.getBtnKeluar())) {

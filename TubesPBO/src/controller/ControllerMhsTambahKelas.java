@@ -39,7 +39,7 @@ public class ControllerMhsTambahKelas implements ActionListener{
     }
     
     public boolean cekKelas(String Kelasnya) {
-        for (int i = 0; i < ViewMhsHome.getMahasiswa().getKelasSemua().size(); i++) {
+        for (int i = 0; i < ViewMhsHome.getMahasiswa().getKelasSemua().size(); i++) {   //ngecek kelas, data yang ditampilin cuma satu gak bakala ada duaa
             if (ViewMhsHome.getMahasiswa().getKelasSemua().get(i).getKelasnya().equals(Kelasnya)) {
                 return false;
             }
@@ -47,7 +47,7 @@ public class ControllerMhsTambahKelas implements ActionListener{
         return true;
     }
     
-    public int getIdxMahasiswa(Mahasiswa mhs) {
+    public int getIdxMahasiswa(Mahasiswa mhs) { //mengindek data kelas mahasiswa
         for (int i = 0; i < apps.getFileMahasiswa().size(); i++) {
             if (apps.getFileMahasiswa().get(i).getUsername().equals(mhs.getUsername())) {
                 return i;
@@ -56,7 +56,7 @@ public class ControllerMhsTambahKelas implements ActionListener{
         return 0;
     }
     
-    public Kelas getKelas(String Kelasnya ) {
+    public Kelas getKelas(String Kelasnya ) {   //mengambil kelas yang sudah disediain admin
         for (int i = 0; i < apps.getFileKelas().size(); i++) {
             if (apps.getFileKelas().get(i).getKelasnya().equals(Kelasnya)) {
                 return apps.getFileKelas().get(i);

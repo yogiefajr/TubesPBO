@@ -60,6 +60,8 @@ public class ControllerMhsHapusKelas implements ActionListener{
                     mhs.get(index).removeKelas(view.getComboKelas());
                     apps.saveFileMahasiswa(mhs);
                     JOptionPane.showMessageDialog(null, "Penghapusan Kelas Berhasil");
+                    view.dispose();
+                new ControllerMhsHapusKelas();
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Kelas Belum Dipilih");
                 }
